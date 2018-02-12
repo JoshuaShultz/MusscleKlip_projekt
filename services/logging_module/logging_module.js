@@ -1,4 +1,6 @@
 const fs = require("fs");
+
+/* Logging Module */
 module.exports = {
     "log": (text) => {
         let date = new Date;
