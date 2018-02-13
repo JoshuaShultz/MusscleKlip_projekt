@@ -1,8 +1,8 @@
 module.exports = {
-    "produkter" : ()=>{
+    "products" : ()=>{
         return require("../../data/produkter");
     },
-    "tidsBestilling" : ()=>{
+    "reservation" : ()=>{
         return require("../../data/tidsbestilling");
     }
 }
