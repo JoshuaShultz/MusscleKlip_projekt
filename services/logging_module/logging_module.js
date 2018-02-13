@@ -1,8 +1,23 @@
 const fs = require("fs");
-
+let writeLogStream = startLogStream();
+function startLogStream() {
+    let date = new Date;
+    let year = date.getFullYear();
+    let month = date.getMonth();
+    let day = date.getDay();
+    var logger =
+        fs.createWriteStream(`./data/log_files/activity_logs/${year}/${year}-${month}-${day}.txt`,
+            {
+                flags: 'a', // 'a' means appending (old data will be preserved)
+                autoClose: false
+            }
+        )
+    return logger;
+}
 /* Logging Module */
 module.exports = {
     "activityLog": (text) => {
+
         let date = new Date;
         let year = date.getFullYear();
         let month = date.getMonth();
@@ -14,39 +29,26 @@ module.exports = {
             if (folderStats != undefined) {
                 fs.stat(`./data/log_files/activity_logs/${year}/${year}-${month}-${day}.txt`, (err, stats) => {
                     if (stats != undefined) {
-                        fs.appendFile(`./data/log_files/activity_logs/${year}/${year}-${month}-${day}.txt`, `\r\n${h}:${m}:${s} ${text} `, (err) => {
-                            if (err) {
-                                throw err;
-                            }
-                        })
+                        writeLogStream.write("`${h}:${m}:${s} ${text}\r\n")
                     }
                     else {
-                        fs.writeFile(`./data/log_files/activity_logs/${year}/${year}-${month}-${day}.txt`, `${h}:${m}:${s} ${text}`, (err) => {
-                            if (err) {
-                                throw err;
-                            }
-                        })
-
+                        writeLogStream.end();
+                        writeLogStream = startLogStream();
                     }
                 })
             }
             else {
                 fs.mkdir(`./data/log_files/activity_logs/${year}`);
                 fs.stat(`./data/log_files/activity_logs/${year}/${year}-${month}-${day}.txt`, (err, stats) => {
-                    if (stats != undefined) {
-                        fs.appendFile(`./data/log_files/activity_logs/${year}/${year}-${month}-${day}.txt`, `\r\n${h}:${m}:${s} ${text}`, (err) => {
-                            if (err) {
-                                throw err;
-                            }
-                        })
-                    }
-                    else {
-                        fs.writeFile(`./data/log_files/activity_logs/${year}/${year}-${month}-${day}.txt`, `${h}:${m}:${s} ${text} `, (err) => {
-                            if (err) {
-                                throw err;
-                            }
-                        })
-                    }
+                    fs.stat(`./data/log_files/activity_logs/${year}/${year}-${month}-${day}.txt`, (err, stats) => {
+                        if (stats != undefined) {
+                            writeLogStream.write("`${h}:${m}:${s} ${text}\r\n")
+                        }
+                        else {
+                            writeLogStream.end();
+                            writeLogStream = startLogStream();
+                        }
+                    })
                 })
             }
         })
