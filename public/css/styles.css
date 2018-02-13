@@ -1,0 +1,39 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+header{
+    background-color:gray;
+    height:100px;
+}
+.logo{
+    height:100px;
+}
+
+.Social-media{
+    height:100px;
+}
+
+nav{
+    background-color: black;
+    height:50px;
+}
+
+footer{
+    background-color:gray;
+    height:250px;
+ }
+ .open-time{
+    background-color:blueviolet;
+    height:250px;
+ }
+ .adresse{
+    background-color:aqua;
+    height:250px;
+ }
+ .map{
+    background-color:blue;
+    height:250px;
+}
