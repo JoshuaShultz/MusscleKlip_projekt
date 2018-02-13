@@ -1,6 +1,7 @@
-const log = require("../services/logging_module");
+const log = require("../services/logging_module/logging_module");
 module.exports = (app)=>{
     app.get("/",(req,res)=>{
-        log.log("hej");
+        res.render("pages/index")
+        log.activityLog(req.connection.remoteAddress + " /index");
     })
 }
