@@ -29,7 +29,7 @@ module.exports = {
             if (folderStats != undefined) {
                 fs.stat(`./data/log_files/activity_logs/${year}/${year}-${month}-${day}.txt`, (err, stats) => {
                     if (stats != undefined) {
-                        writeLogStream.write("`${h}:${m}:${s} ${text}\r\n")
+                        writeLogStream.write(`${h}:${m}:${s} ${text}\r\n`)
                     }
                     else {
                         writeLogStream.end();
@@ -42,7 +42,7 @@ module.exports = {
                 fs.stat(`./data/log_files/activity_logs/${year}/${year}-${month}-${day}.txt`, (err, stats) => {
                     fs.stat(`./data/log_files/activity_logs/${year}/${year}-${month}-${day}.txt`, (err, stats) => {
                         if (stats != undefined) {
-                            writeLogStream.write("`${h}:${m}:${s} ${text}\r\n")
+                            writeLogStream.write(`${h}:${m}:${s} ${text}\r\n`)
                         }
                         else {
                             writeLogStream.end();
