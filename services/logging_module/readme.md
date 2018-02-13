@@ -16,3 +16,5 @@ Admin bruger ændringer:
 
 === Activity Log Modules ===
 
+Aktivitets log:
+    Gemmer alt aktivitet på frontend, ip
