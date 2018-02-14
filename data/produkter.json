@@ -8,14 +8,14 @@
 	},
 	{
 		"id": 3,
-		"produkternavn": "det nye produkt",
+		"produktnavn": "det nye produkt",
 		"info": "snydt",
 		"pris": "100000",
 		"produktbillede": "/img/billede.jpg"
 	},
 	{
 		"id": 5,
-		"produkternavn": "hej",
+		"produktnavn": "hej",
 		"info": "Mantas",
 		"pris": "1234",
 		"produktbillede": "/img/billede.jpg"

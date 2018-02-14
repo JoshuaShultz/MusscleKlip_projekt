@@ -27,10 +27,12 @@ module.exports = (server) => {
     server.post("/opretprodukter", (req, res) => {
         let obj = {};
         obj.id = (json_export.products().length + 1);
-        obj.produkternavn = req.body.navn;
+        console.log("hej");
+        obj.produktnavn = req.body.navn;
         obj.info = req.body.beskrivelse;
         obj.pris = req.body.pris;
         obj.produktbillede = req.body.billede;
+        obj.realproduktbillede = req.files.realbillede.name;
         json_export.products().push(obj);
         json_export.productsUpdate(JSON.stringify(json_export.products(), null, "\t"), res);
     })

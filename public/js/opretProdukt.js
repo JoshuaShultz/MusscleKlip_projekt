@@ -1,12 +1,14 @@
 document.addEventListener("DOMContentLoaded", (event) => {
         document.querySelector("#opretProdukt").addEventListener("click", (event) => {
             event.preventDefault();
+            let form = document.querySelector('form')
+            let data = new FormData(form);
             fetch("http://localhost:3000/opretprodukter/", {
                 'method': 'post',
                 'headers': {
                     'Content-Type': 'application/json'
                 },
-                "body": `{"navn":"${document.querySelector("#navn").value}","beskrivelse":"${document.querySelector("#beskrivelse").value}","pris":"${document.querySelector("#pris").value}","billede":"${document.querySelector("#billede").value}"}`,
+                "body": data,
                 'mode': 'cors',
                 'cache': 'default'
             })
