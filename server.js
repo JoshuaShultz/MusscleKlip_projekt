@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 // Import routes
-require("./routes/routeIndex")(app);
+require("./routes/index")(app);
 
 app.listen(app.get('port'), function () {
 	console.log('Listening on port ' + app.get('port'));
