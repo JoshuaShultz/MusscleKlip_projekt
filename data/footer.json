@@ -1,11 +1,10 @@
 [
     {
-        "name": "Slipseknuden",
-        "street": "Slipsevej 79",
-        "zip": "4300",
-        "city": "Holbæk",
-        "email": "info@slipseknuden.dk",
-        "domain": "www.slipseknuden.dk",
-        "phone": "Tlf.: 88 99 66 44"
+        "navn": "MusscleKlip",
+        "vej": "Hårvej 79",
+        "postnr": "4000",
+        "by": "Roskilde",
+        "email": "klip@musscleklip.dk",
+        "tlf": "12 34 56 78"
     }
 ]
