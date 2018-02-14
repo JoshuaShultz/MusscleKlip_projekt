@@ -1,3 +1,3 @@
 module.exports = (server) => {
-    // require("./index")(server);
+    require("./home")(server);
 }
