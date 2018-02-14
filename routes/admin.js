@@ -19,6 +19,11 @@ module.exports = (server) => {
         });
 
     });
+    server.get('/produkter/:id', function (req, res) {
+        res.json(200,{
+            products:json_export.products()[req.params.id]
+        })
+    });
     server.post("/opretprodukter", (req, res) => {
         console.log("hej")
         let obj = {};
