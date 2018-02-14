@@ -1,19 +1,5 @@
 [
 	{
-		"id": 1,
-		"produktnavn": "voks",
-		"info": "I'm lovin'it.",
-		"pris": 10,
-		"produktbillede": "billede1.jpg"
-	},
-	{
-		"id": 2,
-		"produktnavn": "voks",
-		"info": "l'oreal paris because you're worth it",
-		"pris": 10,
-		"produktbillede": "billede2.jpg"
-	},
-	{
 		"id": 3,
 		"produktnavn": "voks",
 		"info": "maybe it's maybelline",
