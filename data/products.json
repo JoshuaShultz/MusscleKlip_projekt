@@ -1,0 +1,49 @@
+{
+    "produktelementer":[
+    {
+        "produkt": "Shoon Slips",
+        "monster": "Klassisk Brun",
+        "prisen": "500,- kr"
+    },
+    {
+        "produkt": "US Imports",
+        "monster": "Klassisk sort",
+        "prisen": "900,- kr"
+    },
+    {
+        "produkt": "Shoon Slips",
+        "monster": "Sølvpil",
+        "prisen": "600,- kr"
+    },
+    {
+        "produkt": "US Imports",
+        "monster": "Klassisk brun",
+        "prisen": "243,- kr"
+    },
+    {
+        "produkt": "Shoon Slips",
+        "monster": "Sølvpil",
+        "prisen": "700,- kr"
+    },
+    {
+        "produkt": "US Imports",
+        "monster": "Klassisk sort",
+        "prisen": "400,- kr"
+    },
+    {
+        "produkt": "US Imports",
+        "monster": "Klassisk brun",
+        "prisen": "243,- kr"
+    },
+    {
+        "produkt": "Shoon Slips",
+        "monster": "Sølvpil",
+        "prisen": "700,- kr"
+    },
+    {
+        "produkt": "US Imports",
+        "monster": "Klassisk sort",
+        "prisen": "400,- kr"
+    }
+    
+]}
