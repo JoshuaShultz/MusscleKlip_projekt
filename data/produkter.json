@@ -16,6 +16,7 @@
 	{
 		"id": 5,
 		"produktnavn": "hej",
+<<<<<<< HEAD
 		"info": "maybe it's maybelline",
 		"pris": "10",
 		"produkternavn": "voks1"
@@ -25,6 +26,10 @@
 		"produkternavn": "adttat",
 		"info": "astasastastat",
 		"pris": "13",
+=======
+		"info": "Mantas",
+		"pris": "1234",
+>>>>>>> 46024a9d83ae2d497bfc99a5818ffe0addf273ba
 		"produktbillede": "/img/billede.jpg"
 	}
 ]
