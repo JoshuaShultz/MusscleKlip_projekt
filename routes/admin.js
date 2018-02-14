@@ -9,41 +9,54 @@ module.exports = (server) => {
             produkter: json_export.products()
 
         });
+        //log
+        log_module.activityLog(req.connection.remoteAddress + " admin /produkter");
     });
     server.delete("/produkter/:id", (req, res) => {
+        //log
+        log_module.activityLog(req.connection.remoteAddress + " admin delete/produkter/:id");
+        log_module.adminlog(req.connection.remoteAddress + " product with name " + json_export.products()[req.params.id].produktnavn + " has been deleted");
+        //delete the requested produkt
         json_export.products().splice(req.params.id, 1)
         json_export.productsUpdate(JSON.stringify(json_export.products(), null, "\t"), res);
     })
     server.get('/opretprodukt', function (req, res) {
         res.render('pages/opretprodukt', {
         });
+        //log
+        log_module.activityLog(req.connection.remoteAddress + " admin /opretprodukt");
 
     });
     server.get('/produkter/:id', function (req, res) {
-        res.json(200,{
-            product:json_export.products()[req.params.id]
+        res.status(200).json({
+            product: json_export.products()[req.params.id]
         })
+        //log
+        log_module.activityLog(req.connection.remoteAddress + " admin /produkter/:id");
     });
     server.post("/opretprodukter", (req, res) => {
+        //creating new object and pusing it to json then saving the json file
         let obj = {};
-        obj.id = (json_export.products().length + 1);
-        console.log("hej");
         obj.produktnavn = req.body.navn;
         obj.info = req.body.beskrivelse;
         obj.pris = req.body.pris;
         obj.produktbillede = req.body.billede;
-        obj.realproduktbillede = req.files.realbillede.name;
         json_export.products().push(obj);
         json_export.productsUpdate(JSON.stringify(json_export.products(), null, "\t"), res);
+        //log
+        log_module.activityLog(req.connection.remoteAddress + " admin delete/produkter/:id");
+        log_module.adminlog(req.connection.remoteAddress + ` product with values produktnavn : ${obj.produktnavn} beskrivelse : ${obj.info} pris : ${obj.pris} billede : ${obj.produktbillede} has been created`);
     })
     server.put("/redigereprodukter", (req, res) => {
         let id = req.body.id;
-        console.log(json_export.products()[id])
+        //log
+        log_module.activityLog(req.connection.remoteAddress + " admin put/redigereprodukter");
+        log_module.adminlog(req.connection.remoteAddress + ` product with values produktnavn : ${json_export.products()[id].produktnavn} beskrivelse : ${json_export.products()[id].info} pris : ${json_export.products()[id].pris} billede : ${json_export.products()[id].produktbillede} has been changed to values produktnavn : ${req.body.navn} beskrivelse : ${req.body.beskrivelse} pris : ${req.body.pris} billede : ${req.body.produktbillede} `);
+        //overwriting values and saving to json
         json_export.products()[id].produktnavn = req.body.navn;
         json_export.products()[id].info = req.body.beskrivelse;
         json_export.products()[id].pris = req.body.pris;
         json_export.products()[id].produktbillede = req.body.produktbillede;
-        console.log(json_export.products()[id]);
         json_export.productsUpdate(JSON.stringify(json_export.products(), null, "\t"), res);
     })
 

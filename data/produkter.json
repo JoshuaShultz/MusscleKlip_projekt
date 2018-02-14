@@ -1,29 +1,32 @@
 [
 	{
-		"id": 1,
 		"produktnavn": "voks13",
 		"info": "maybe it's maybelline",
 		"pris": "10",
 		"produktbillede": "undefined"
 	},
 	{
-		"id": 3,
-		"produktnavn": "det nye produkt",
+		"produktnavn": "det nye produkt 123",
 		"info": "snydt",
 		"pris": "100000",
 		"produktbillede": "/img/billede.jpg"
 	},
 	{
-		"id": 5,
-		"produktnavn": "hej",
+		"produktnavn": "hej 123",
 		"info": "maybe it's maybelline",
-		"pris": "10"
+		"pris": "10",
+		"produktbillede": "undefined"
 	},
 	{
-		"id": 4,
-		"produktnavn": "adttat",
-		"info": "astasastastat",
-		"pris": "13",
-		"produktbillede": "/img/billede.jpg"
+		"produktnavn": "gasdgadsgsdagfas",
+		"info": "gdasgdsafdsa",
+		"pris": "1231241231",
+		"produktbillede": "billede.jpg"
+	},
+	{
+		"produktnavn": "gasdgadsgsdagfas",
+		"info": "gdasgdsafdsa1234",
+		"pris": "1231241231",
+		"produktbillede": "billede.jpg"
 	}
 ]

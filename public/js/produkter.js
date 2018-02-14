@@ -34,11 +34,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     document.querySelector('#singlebutton').addEventListener('click', (event) => {
                         event.preventDefault();
                         let object = JSON.stringify({
-                            id: (data.product.id - 1),
+                            id: (element.dataset.id),
                             navn: redigernavn.value,
                             beskrivelse: redigerbeskrivelse.value,
                             pris: redigerpris.value,
-                            produktbillede:redigerbillede.value
+                            produktbillede: redigerbillede.value
                         })
 
                         fetch("http://localhost:3000/redigereprodukter/", {
