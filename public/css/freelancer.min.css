@@ -748,7 +748,33 @@ footer .footer-above{
 .img-cutters {
 	margin: 3% 0;
 }
+
+/* Medarbejdere */
+
+h1 {
+    text-align: center;
+}
+
+.rounded-circle {
+    height: 40%;
+    width: 100%;
+}
+
+.roundedImg {
+    text-align: center;
+    margin: 5% 0;
+}
+
+.roundedInfo {
+    text-align: center;
+    color: #000;
+    font-size: 1em;
+}
+
+
+
 >>>>>>> f4b4ae9f1b77e6a38f8198570d986b06eb096396
 
 
 /* INFO SEKTION */
+
