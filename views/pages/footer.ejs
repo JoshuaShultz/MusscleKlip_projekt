@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <title>Admin - HIFI</title>
+</head>
+
+<body class="home">
+  <div class="container top-container">
+    <div class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-bar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">MUSKELKLIP-ADMIN</a></div>
+        <div class="collapse navbar-collapse" id="nav-bar">
+          <ul class="nav navbar-nav">
+     
+  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-th-list"></span> &nbsp; Produkter <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/produkter">   Administrering </a></li>
+          <li><a href="/opretprodukt">Opret Produkt</a></li>
+        </ul>
+      </li>
+      
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-th-list"></span> &nbsp; Galleri <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/galleri">   Administrering </a></li>
+          <li><a href="/opretbillede">Opret Billider</a></li>
+        </ul>
+      </li>
+      
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-th-list"></span> &nbsp; Arbejdere <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/arbejdere">   Administrering </a></li>
+          <li><a href="/opretarbejdere">Opret Arbejdere</a></li>
+        </ul>
+      </li>
+      
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-th-list"></span> &nbsp; Generel info <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/info">   Administrering </a></li>
+          <li><a href="/opretinfo">Opret Information</a></li>
+        </ul>
+      </li>
+      
+      
+      
+  <li><a href="/kontakt"> <span class="glyphicon glyphicon-envelope"></span> &nbsp; Bestillinger</a></li>
+</ul>
+         
+  
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Logud <span class="caret"></span></a>
+              <ul id="nav_login" class="dropdown-menu login-nav-dropdown">
+                <li>
+                  <div class="container-fluid dropdown-header">
+                    <div class="row">
+                      <div class="col-xs-12 col-md-8">
+                        <strong>Logoud</strong>
+                      </div>
+                      <div class="col-xs-12 col-md-8">&nbsp;</div>
+                      <div class="col-xs-12">
+                        <button id="logud" name="" class="btn">Log ud</button>
+                    </div>
+  <div class="col-xs-12">
+    <form class="form-horizontal loginForm">
+  <fieldset>
+    &nbsp;
+  </fieldset>
+      </form>
+      
+                    </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+                <div class="container">
+                            
+                            <div id="alert"></div>
+                            <div class="panel-body">
+                                <ul class="list-group" id="products">
+                                    <li class="list-group-item product">
+                                        <div class="row">
+                                            <div class="col-xs-2 col-md-1 product_img"></div>
+                                            <div class="col-xs-10 col-md-11">
+                                                <div>
+                                                    <p class="producttitle"><!-- Titel --></p>
+                                                </div>
+                                                <div class="product-description">
+                                                    <p class="productdescription"><!-- Beskrivelse --></p>
+                                                </div>
+                                                <div class="product-price">
+                                                    <p class="pricetext"> <!-- Titel -->DKK </p>
+                                                </div>
+                                                <div class="action">
+                                                    <a href="#" type="button" class="btn btn-primary btn-xs edit" data-id="" title="Rediger">
+                                                        <span class="glyphicon glyphicon-pencil"></span>
+                                                    </a>
+                                                    <a href="#" type="button" class="btn btn-danger btn-xs delete" data-id="" title="Slet">
+                                                        <span class="glyphicon glyphicon-trash"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+</body>
+
+</html>
