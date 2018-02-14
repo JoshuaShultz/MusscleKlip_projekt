@@ -37,7 +37,7 @@ module.exports = (server) => {
         json_export.productsUpdate(JSON.stringify(json_export.products(), null, "\t"), res);
     })
     server.post("/redigereprodukter", (req, res) => {
-        json_export.products()[id].id = req.body.id;
+        let id = req.body.id
         json_export.products()[id].produkternavn = req.body.navn;
         json_export.products()[id].info = req.body.beskrivelse;
         json_export.products()[id].pris = req.body.pris;
