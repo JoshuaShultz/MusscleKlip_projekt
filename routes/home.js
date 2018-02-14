@@ -6,6 +6,6 @@ const log_module = require("../services/logging_module/logging_module.js");
 module.exports = (server)=>{
     server.get("/",(req,res)=>{
         res.render("pages/index")
-        log.activityLog(req.connection.remoteAddress + " /index");
+        log_module.activityLog(req.connection.remoteAddress + " /index");
     })
 }
