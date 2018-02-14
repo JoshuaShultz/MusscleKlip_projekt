@@ -1,11 +1,19 @@
 [{
-    "billede1": "Curly-Wavy.jpg",
-    "billede2": "tumb.jpg",
-    "billede3": "Curly-Wavy.jpg",
-    "billede4": "spiky.jpg",
-    "billede5": "August_Fenisko.jpg",
-    "billede6": "men-hairstyles-2016.jpg",
-    "billede7": "Frank.jpg",
-    "billede8": "Addy.jpg",
-    "billede9": "Hanne.jpg"
+    "billede": "Curly-Wavy.jpg"
+    },{
+    "billede": "tumb.jpg"
+    },{
+    "billede": "Curly-Wavy.jpg"
+    },{
+    "billede": "spiky.jpg"
+    },{
+    "billede": "August_Fenisko.jpg"
+    },{
+    "billede": "men-hairstyles-2016.jpg"
+    },{
+    "billede": "Frank.jpg"
+    },{
+    "billede": "Addy.jpg"
+    },{
+    "billede": "Hanne.jpg"
 }]
