@@ -25,7 +25,6 @@ module.exports = (server) => {
         })
     });
     server.post("/opretprodukter", (req, res) => {
-        console.log("hej")
         let obj = {};
         obj.id = (json_export.products().length + 1);
         obj.produkternavn = req.body.navn;
