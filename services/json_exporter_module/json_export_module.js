@@ -25,5 +25,8 @@ module.exports = {
     },
     "garanti": () => {
         return require("../../data/garanti");
+    },
+    "galleri": () => {
+        return require("../../data/galleri");
     }
 }
