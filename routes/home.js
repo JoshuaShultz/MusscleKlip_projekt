@@ -5,7 +5,9 @@ const log_module = require("../services/logging_module/logging_module.js");
 
 module.exports = (server)=>{
     server.get("/",(req,res)=>{
-        res.render("pages/index")
+        res.render("pages/index",{
+            galleri:json_export.galleri()
+        })
         log_module.activityLog(req.connection.remoteAddress + " /index");
     })
 }
