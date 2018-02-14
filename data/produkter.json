@@ -1,10 +1,10 @@
 [
 	{
-		"id": 3,
-		"produktnavn": "voks",
+		"id": 1,
+		"produktnavn": "voks13",
 		"info": "maybe it's maybelline",
-		"pris": 10,
-		"produktbillede": "billede3.jpg"
+		"pris": "10",
+		"produktbillede": "undefined"
 	},
 	{
 		"id": 3,
@@ -17,12 +17,11 @@
 		"id": 5,
 		"produktnavn": "hej",
 		"info": "maybe it's maybelline",
-		"pris": "10",
-		"produkternavn": "voks1"
+		"pris": "10"
 	},
 	{
 		"id": 4,
-		"produkternavn": "adttat",
+		"produktnavn": "adttat",
 		"info": "astasastastat",
 		"pris": "13",
 		"produktbillede": "/img/billede.jpg"

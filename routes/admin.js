@@ -36,20 +36,14 @@ module.exports = (server) => {
         json_export.products().push(obj);
         json_export.productsUpdate(JSON.stringify(json_export.products(), null, "\t"), res);
     })
-<<<<<<< HEAD
     server.put("/redigereprodukter", (req, res) => {
-        
         let id = req.body.id;
-        console.log(id);
-        console.log(req.body)
-=======
-    server.post("/redigereprodukter", (req, res) => {
-        let id = req.body.id
->>>>>>> 46024a9d83ae2d497bfc99a5818ffe0addf273ba
-        json_export.products()[id].produkternavn = req.body.navn;
+        console.log(json_export.products()[id])
+        json_export.products()[id].produktnavn = req.body.navn;
         json_export.products()[id].info = req.body.beskrivelse;
         json_export.products()[id].pris = req.body.pris;
-        json_export.products()[id].produktbillede = req.body.billede;
+        json_export.products()[id].produktbillede = req.body.produktbillede;
+        console.log(json_export.products()[id]);
         json_export.productsUpdate(JSON.stringify(json_export.products(), null, "\t"), res);
     })
 
