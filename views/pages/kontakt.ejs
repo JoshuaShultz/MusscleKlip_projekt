@@ -118,7 +118,7 @@
                 </tr>
             </thead>
 
-            <% reservation.forEach(item => { %>
+            <% reservation.forEach((item, index) => { %>
               <tbody id="beskeder">
                   <tr class="besked">
                       <td class="name col-sm-3"><%= item.navn %></td>
@@ -127,7 +127,7 @@
                       <td class="barber col-sm-3"><%= item.barber %></td>
                       <td class="besked col-sm-3"><%= item.besked %></td>
                       <td class="knapper">
-                          <a href="#" type="button" class="btn btn-primary btn-xs delete" data-id="" title="Slet">
+                          <a href="#" type="button" class="btn btn-primary btn-xs delete" data-id=" <%= index %>" title="Slet">
                               <i class="fa fa-trash green" aria-hidden="true"></i>
                           </a>
                       </td>
@@ -141,6 +141,7 @@
     <script src="scripts/logind_check.js"></script>
     <script src="scripts/logud.js"></script>
     <script src="scripts/beskeder.js"></script>
+    <script src="/js/bestilling.js"></script>
     <script>
         var w = $(window).width(),
             toggle = $('#toggle-menu'),

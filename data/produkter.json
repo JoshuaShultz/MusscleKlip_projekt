@@ -1,6 +1,6 @@
 [
 	{
-		"produktnavn": "voks13",
+		"produktnavn": "voks13m,",
 		"info": "maybe it's maybelline",
 		"pris": "10",
 		"produktbillede": "undefined"
@@ -12,27 +12,6 @@
 		"produktbillede": "/img/billede.jpg"
 	},
 	{
-<<<<<<< HEAD
-		"id": 5,
-		"produkternavn": "hej",
-		"info": "Mantas",
-		"pris": "1234",
-		"produktbillede": "/img/billede.jpg"
-	},
-	{
-		"id": 4,
-		"produkternavn": "",
-		"info": "",
-		"pris": "",
-		"produktbillede": "/img/Addy.jpg"
-	},
-	{
-		"id": 5,
-		"produkternavn": "",
-		"info": "",
-		"pris": "",
-		"produktbillede": "/img/Addy.jpg"
-=======
 		"produktnavn": "hej 123",
 		"info": "maybe it's maybelline",
 		"pris": "10",
@@ -49,6 +28,5 @@
 		"info": "gdasgdsafdsa1234",
 		"pris": "1231241231",
 		"produktbillede": "billede.jpg"
->>>>>>> dacff0098368780bc71d4e40fde9b6d2a6889570
 	}
 ]
