@@ -106,7 +106,7 @@ module.exports = (server) => {
         json_export.footer()[0].email = req.body.email;
         json_export.footer()[0].tlf = req.body.tlf;
         json_export.footerUpdate(JSON.stringify(json_export.footer()));
-
+        res.status(200).json({ sucess: true })
 
     })
 

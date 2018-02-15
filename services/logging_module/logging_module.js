@@ -67,7 +67,9 @@ module.exports = {
                 writeLogStream.write(`${h}:${m}:${s} ${text}\r\n`)
             }
             else {
-                writeLogStream.end();
+                if (writeLogStream == undefined) {
+                    writeLogStream.end();
+                }
                 writeLogStream = startLogStream();
             }
         })
@@ -85,7 +87,9 @@ module.exports = {
                 writeAdminLogStream.write(`${h}:${m}:${s} ${text}\r\n`)
             }
             else {
-                writeAdminLogStream.end();
+                if (writeAdminLogStream == undefined) {
+                    writeAdminLogStream.end();
+                }
                 writeAdminLogStream = startLogStream();
             }
         })
