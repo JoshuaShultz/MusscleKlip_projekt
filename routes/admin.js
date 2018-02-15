@@ -99,6 +99,7 @@ module.exports = (server) => {
 
     server.get('/kontakt', function (req, res) {
         res.render('pages/kontakt', {
+            reservation :json_export.reservation()
 
         });
     });
