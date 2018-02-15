@@ -19,6 +19,7 @@ module.exports = (server) => {
         //delete the requested produkt
         json_export.products().splice(req.params.id, 1)
         json_export.productsUpdate(JSON.stringify(json_export.products(), null, "\t"), res);
+        res.status(200).json({ sucess: true })
     })
     server.get('/opretprodukt', function (req, res) {
         res.render('pages/opretprodukt', {
@@ -46,6 +47,7 @@ module.exports = (server) => {
         //log
         log_module.activityLog(req.connection.remoteAddress + " admin delete/produkter/:id");
         log_module.adminlog(req.connection.remoteAddress + ` product with values produktnavn : ${obj.produktnavn} beskrivelse : ${obj.info} pris : ${obj.pris} billede : ${obj.produktbillede} has been created`);
+        res.status(200).json({ sucess: true })
     })
     server.put("/redigereprodukter", (req, res) => {
         let id = req.body.id;
@@ -58,6 +60,7 @@ module.exports = (server) => {
         json_export.products()[id].pris = req.body.pris;
         json_export.products()[id].produktbillede = req.body.produktbillede;
         json_export.productsUpdate(JSON.stringify(json_export.products(), null, "\t"));
+        res.status(200).json({ sucess: true })
     })
 
     server.get('/galleri', function (req, res) {
@@ -87,10 +90,13 @@ module.exports = (server) => {
 
     server.get('/info', function (req, res) {
         res.render('pages/info', {
-            footer:json_export.footer()
+            footer: json_export.footer()
 
         });
     });
+    server.put("/retinfo", () => {
+
+    })
 
     server.get('/opretinfo', function (req, res) {
         res.render('pages/opretinfo', {
@@ -114,13 +120,15 @@ module.exports = (server) => {
         obj.besked = req.body.message
         json_export.reservation().push(obj);
         json_export.reservationUpdate(JSON.stringify(json_export.reservation(), null, "\t"))
+        res.status(200).json({ sucess: true })
     })
     server.delete("/sletbestilling/:id", (req, res) => {
         //log
         log_module.activityLog(req.connection.remoteAddress + " admin delete/sletbestilling/:id");
-         log_module.adminlog(req.connection.remoteAddress + " reservation with name " + json_export.reservation()[parseInt(req.params.id)].navn + " has been deleted");
+        log_module.adminlog(req.connection.remoteAddress + " reservation with name " + json_export.reservation()[parseInt(req.params.id)].navn + " has been deleted");
         // delete the requested order
-         json_export.reservation().splice(req.params.id, 1)
-         json_export.reservationUpdate(JSON.stringify(json_export.reservation(), null, "\t"));
+        json_export.reservation().splice(req.params.id, 1)
+        json_export.reservationUpdate(JSON.stringify(json_export.reservation(), null, "\t"));
+        res.status(200).json({ sucess: true })
     })
 }
