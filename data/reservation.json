@@ -5,5 +5,12 @@
 		"tlf": "123",
 		"barber": "1",
 		"besked": "adsf"
+	},
+	{
+		"navn": "asdfasdf",
+		"tidspunkt": "12:30",
+		"tlf": "124512312",
+		"barber": "Frank",
+		"besked": "asdfasdfasd"
 	}
 ]
