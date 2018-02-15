@@ -57,7 +57,7 @@ module.exports = (server) => {
         json_export.products()[id].info = req.body.beskrivelse;
         json_export.products()[id].pris = req.body.pris;
         json_export.products()[id].produktbillede = req.body.produktbillede;
-        json_export.productsUpdate(JSON.stringify(json_export.products(), null, "\t"), res);
+        json_export.productsUpdate(JSON.stringify(json_export.products(), null, "\t"));
     })
 
     server.get('/galleri', function (req, res) {
@@ -115,6 +115,11 @@ module.exports = (server) => {
         json_export.reservationUpdate(JSON.stringify(json_export.reservation(), null, "\t"))
     })
     server.delete("/sletbestilling/:id", (req, res) => {
-        console.log(req.params.id);
+         //log
+         log_module.activityLog(req.connection.remoteAddress + " admin delete/produkter/:id");
+         log_module.adminlog(req.connection.remoteAddress + " reservation with name " + json_export.reservation()[req.params.id].navn + " has been deleted");
+         //delete the requested produkt
+         json_export.reservation().splice(req.params.id, 1)
+         json_export.reservationUpdate(JSON.stringify(json_export.reservation(), null, "\t"));
     })
 }
