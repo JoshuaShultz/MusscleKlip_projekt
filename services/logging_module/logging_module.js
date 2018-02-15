@@ -14,8 +14,8 @@ function createFolders() {
 function startLogStream() {
     let date = new Date;
     let year = date.getFullYear();
-    let month = date.getMonth();
-    let day = date.getDay();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
     if (!fs.existsSync(`./data/log_files/activity_logs/${year}`)) {
         createFolders();
     }
@@ -35,8 +35,8 @@ let writeAdminLogStream = startAdminLogStream();
 function startAdminLogStream() {
     let date = new Date;
     let year = date.getFullYear();
-    let month = date.getMonth();
-    let day = date.getDay();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
     if (!fs.existsSync(`./data/log_files/admin_logs/${year}`)) {
         createFolders();
     }
@@ -57,8 +57,8 @@ module.exports = {
     "activityLog": (text) => {
         let date = new Date;
         let year = date.getFullYear();
-        let month = date.getMonth();
-        let day = date.getDay();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
         let h = date.getHours();
         let m = date.getMinutes();
         let s = date.getSeconds();
@@ -75,8 +75,8 @@ module.exports = {
     "adminlog": (text) => {
         let date = new Date;
         let year = date.getFullYear();
-        let month = date.getMonth();
-        let day = date.getDay();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
         let h = date.getHours();
         let m = date.getMinutes();
         let s = date.getSeconds();

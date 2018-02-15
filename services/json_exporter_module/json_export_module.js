@@ -9,10 +9,6 @@ module.exports = {
                 console.log(err)
             }
         })
-        res.render('pages/produkter', {
-            produkter: products()
-
-        });
     },
     "reservation": () => {
         return require("../../data/reservation");

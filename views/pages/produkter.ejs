@@ -137,7 +137,7 @@
   <div class="container">
 
     <div id="alert"></div>
-    <div class="panel-body">
+    <div class="panel-body col-md-6">
       <ul class="list-group" id="products">
         <% produkter.forEach((element, index)=>{%>
           <li class="list-group-item product">
@@ -174,6 +174,63 @@
           <%})%>
       </ul>
     </div>
+    
+    <div class="panel-body col-md-6">
+        <form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>REDIGER PRODUKT</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="product_id">PRODUKT</label>  
+  <div class="col-md-6">
+  <input id="product_id" name="product_id" placeholder="Navn" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="product_name">BESKRIVELSE</label>  
+  <div class="col-md-6">
+  <input id="product_name" name="product_name" placeholder="Produktbeskrivelse" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">    
+  <label class="col-md-6 control-label" for="product_name_fr">PRIS</label>  
+  <div class="col-md-6">
+  <input id="product_name_fr" name="product_name_fr" placeholder="Angiv pris" class="form-control input-md" required="" type="number">
+    
+  </div>
+</div>
+
+ <!-- File Button --> 
+<div class="form-group">    
+  <label class="col-md-6 control-label" for="filebutton">BILLEDE</label>
+  <div class="col-md-6">
+    <input id="filebutton" name="filebutton" class="input-file" type="text">
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-6 control-label" for="singlebutton">Gem ændringer</label>
+  <div class="col-md-6">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">GEM</button>
+  </div>
+  </div>
+
+</fieldset>
+</form>
+        
+    </div>
+    
+    
   </div>
 
 <script src="/js/produkter.js"></script>
