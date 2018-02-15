@@ -105,31 +105,36 @@
         <h1 class="col-md-12">BRUGER BESKED</h1>
        
     
-    <div class="col-sm-8 col-sm-offset-2 col-md-offset-0 col-md-12">
+    <div class="col-sm-12  col-md-12">
         <table>
             <caption>Beskeder</caption>
             <thead>
                 <tr>
-                    <th scope="col">Navn</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Emne</th>
-                    <th scope="col">Besked</th>
-                    <th scope="col">Handlinger</th>
+                    <th class="col-sm-3" scope="col">Navn</th>
+                    <th class="col-sm-3" scope="col">Tidspunkt</th>
+                    <th class="col-sm-3" scope="col">Telefon</th>
+                    <th class="col-sm-3" scope="col">Barber</th>
+                    <th class="col-sm-3" scope="col">Besked</th>
                 </tr>
             </thead>
-            <tbody id="beskeder">
-                <tr class="besked">
-                    <td class="navn"></td>
-                    <td class="email"></td>
-                    <td class="emne"></td>
-                    <td class="tekst"></td>
-                    <td class="knapper">
-                        <a href="#" type="button" class="btn btn-primary btn-xs delete" data-id="" title="Slet">
-                            <i class="fa fa-trash green" aria-hidden="true"></i>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
+
+            <% reservation.forEach(item => { %>
+              <tbody id="beskeder">
+                  <tr class="besked">
+                      <td class="name col-sm-3"><%= item.navn %></td>
+                      <td class="time col-sm-3"><%= item.tidspunkt %></td>
+                      <td class="tlf col-sm-3"><%= item.tlf %></td>
+                      <td class="barber col-sm-3"><%= item.barber %></td>
+                      <td class="besked col-sm-3"><%= item.besked %></td>
+                      <td class="knapper">
+                          <a href="#" type="button" class="btn btn-primary btn-xs delete" data-id="" title="Slet">
+                              <i class="fa fa-trash green" aria-hidden="true"></i>
+                          </a>
+                      </td>
+                  </tr>
+              </tbody>
+            <% }) %>
+
         </table>
     </div>
     </div>
@@ -161,6 +166,17 @@
             }
         });
     </script>
+
+    <style>
+      td {
+        border: 1px solid black;
+        padding: 5% 0;
+      }
+
+      .knapper {
+        padding: 1%;
+      }
+    </style>
 
 </body>
 
