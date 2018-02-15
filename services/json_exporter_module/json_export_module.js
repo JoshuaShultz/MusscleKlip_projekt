@@ -26,6 +26,13 @@ module.exports = {
     "footer": () => {
         return require("../../data/footer");
     },
+    "footerUpdate": (data) => {
+        fs.writeFile("data/footer.json", data, (err) => {
+            if (err) {
+                console.log(err)
+            }
+        })
+    },
     "garanti": () => {
         return require("../../data/garanti");
     },

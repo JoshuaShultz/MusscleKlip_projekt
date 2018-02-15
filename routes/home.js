@@ -9,7 +9,8 @@ module.exports = (server) => {
             galleri: json_export.galleri(),
             footer: json_export.footer(),
             prices: json_export.prices(),
-            openHours: json_export.openHours()
+            openHours: json_export.openHours(),
+            products : json_export.products()
         })
         log_module.activityLog(req.connection.remoteAddress + " /index");
     })

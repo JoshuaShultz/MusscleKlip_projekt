@@ -96,7 +96,17 @@ module.exports = (server) => {
         
     });
     server.put("/retinfo", (req, res) => {
-        console.log(req.body)
+        log_module.activityLog(req.connection.remoteAddress + " admin put/retinfo");
+        log_module.adminlog(req.connection.remoteAddress + ` footer has been changed from : navn: ${json_export.footer()[0].navn} vej: ${json_export.footer()[0].vej} postnr: ${json_export.footer()[0].postnr} by: ${json_export.footer()[0].by} email: ${json_export.footer()[0].email} tlf: ${json_export.footer()[0].tlf} to: navn: ${ req.body.navn} vej: ${ req.body.vej} postnr: ${ req.body.postnr} by: ${ req.body.by} email: ${ req.body.email} tlf: ${ req.body.tlf} 
+        `);
+        json_export.footer()[0].navn = req.body.navn;
+        json_export.footer()[0].vej = req.body.vej;
+        json_export.footer()[0].postnr = req.body.postnr;
+        json_export.footer()[0].by = req.body.by;
+        json_export.footer()[0].email = req.body.email;
+        json_export.footer()[0].tlf = req.body.tlf;
+        json_export.footerUpdate(JSON.stringify(json_export.footer()));
+
 
     })
 
