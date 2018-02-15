@@ -115,10 +115,10 @@ module.exports = (server) => {
         json_export.reservationUpdate(JSON.stringify(json_export.reservation(), null, "\t"))
     })
     server.delete("/sletbestilling/:id", (req, res) => {
-         //log
-         log_module.activityLog(req.connection.remoteAddress + " admin delete/produkter/:id");
-         log_module.adminlog(req.connection.remoteAddress + " reservation with name " + json_export.reservation()[req.params.id].navn + " has been deleted");
-         //delete the requested produkt
+        //log
+        log_module.activityLog(req.connection.remoteAddress + " admin delete/sletbestilling/:id");
+         log_module.adminlog(req.connection.remoteAddress + " reservation with name " + json_export.reservation()[parseInt(req.params.id)].navn + " has been deleted");
+        // delete the requested order
          json_export.reservation().splice(req.params.id, 1)
          json_export.reservationUpdate(JSON.stringify(json_export.reservation(), null, "\t"));
     })
