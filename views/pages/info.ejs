@@ -86,39 +86,40 @@
     </div>
   </div>
                 <div class="container">
-                            
-                            <div id="alert"></div>
-                            <div class="panel-body">
-                                <ul class="list-group" id="products">
-                                    <li class="list-group-item product">
-                                        <div class="row">
-                                            <div class="col-xs-2 col-md-1 product_img"></div>
-                                            <div class="col-xs-10 col-md-11">
-                                                <div>
-                                                    <p class="producttitle">TITEL</p>
-                                                </div>
-                                                <div class="product-description">
-                                                    <p class="productdescription">BESKRIVELSE</p>
-                                                </div>
-                                                <div class="product-price">
-                                                    <p class="pricetext"> TITEL DKK </p>
-                                                </div>
-                                                <div class="action">
-                                                    <a href="#" type="button" class="btn btn-primary btn-xs edit" data-id="" title="Rediger">
-                                                        <span class="glyphicon glyphicon-pencil"></span>
-                                                    </a>
-                                                    <a href="#" type="button" class="btn btn-danger btn-xs delete" data-id="" title="Slet">
-                                                        <span class="glyphicon glyphicon-trash"></span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+
+                    <form>
+                        <div class="form-group">
+                            <label class="col-form-label" for="formGroupExampleInput">Navn</label>
+                            <input type="text" class="form-control" id="navn" value="<%= footer[0].navn %>">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="formGroupExampleInput">Vej:</label>
+                            <input type="text" class="form-control" id="vej"  value="<%= footer[0].vej %>">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="formGroupExampleInput">PostNr:</label>
+                            <input type="text" class="form-control" id="postnr" value="<%= footer[0].postnr %>">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="formGroupExampleInput">By:</label>
+                            <input type="text" class="form-control" id="by" value="<%= footer[0].by %>">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="formGroupExampleInput">Email:</label>
+                            <input type="text" class="form-control" id="email"  value="<%= footer[0].email %>" >
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="formGroupExampleInput">Telefon:</label>
+                            <input type="text" class="form-control" id="tlf" value="<%= footer[0].tlf %>">
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="opretProdukt">Bekræft</button>
+                    </form>
+                        
                         </div>
 
 
 </body>
+
+<script src="./js/info.js"></script>
 
 </html>
