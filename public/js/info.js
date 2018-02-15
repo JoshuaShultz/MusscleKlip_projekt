@@ -25,7 +25,7 @@ console.log(object)
         'headers': {
             'Content-Type': 'application/json'
         },
-        "body": object,
+        "body": JSON.stringify(object),
         'mode': 'cors',
         'cache': 'default'
     }
