@@ -1,3 +1,5 @@
+
+
 <section id="kontakt">
 
   <div class="container">
@@ -21,16 +23,16 @@
 
                 <select class="custom-select form-control" id="inputTime" required>
                   <option selected>Vælg Tidspunkt</option>e
-                  <option value="1">10:00</option>
-                  <option value="2">10:30</option>
-                  <option value="3">11:00</option>
-                  <option value="4">11:30</option>
-                  <option value="5">12:00</option>
-                  <option value="6">12:30</option>
-                  <option value="7">13:00</option>
-                  <option value="8">13:30</option>
-                  <option value="9">14:00</option>
-                  <option value="10">14:30</option>
+                  <option value="10:00">10:00</option>
+                  <option value="10:30">10:30</option>
+                  <option value="11:00">11:00</option>
+                  <option value="11:30">11:30</option>
+                  <option value="12:00">12:00</option>
+                  <option value="12:30">12:30</option>
+                  <option value="13:00">13:00</option>
+                  <option value="13:30">13:30</option>
+                  <option value="14:00">14:00</option>
+                  <option value="14:30">14:30</option>
                 </select>
 
 
@@ -39,10 +41,11 @@
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="inputPhone">Telefon</label>
-                <input type="text" class="form-control" id="inputPhone" required>
+                <input type="number" class="form-control" id="inputPhone" required>
               </div>
             </div>
           </div>
+
 
           <div class="row img-cutters">
             <div class="col-sm-4">
@@ -68,9 +71,9 @@
               
               <select class="custom-select form-control" id="inputCutter" required>
                 <option selected>Vælg Her</option>
-                <option value="1">Frank</option>
-                <option value="2">Ady</option>
-                <option value="3">Hanne</option>
+                <option value="Frank">Frank</option>
+                <option value="Ady">Ady</option>
+                <option value="Hanne">Hanne</option>
               </select>
             </div>
           </div>
@@ -81,7 +84,7 @@
             <label for="inputBesked">Besked (Fx. Hvilken slags klip)</label>
             <textarea class="form-control" id="inputBesked" rows="3" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" class="btn btn-primary" id="submitBtn">
             <i class="fa fa-paper-plane"></i>Send</button>
         </form>
       </div>
@@ -90,3 +93,5 @@
 </div>
 
 </section>
+
+<script src="../../js/kontakt.js"></script>

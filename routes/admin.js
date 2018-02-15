@@ -105,10 +105,12 @@ module.exports = (server) => {
     server.post("/bestiltid", (req, res) => {
         console.log(req.body)
         let obj = {};
-        obj.navn = req.body.navn
-        obj.tidspunkt = req.body.tidspunkt
-        obj.tlf = req.body.tlf
-        obj.barber = req.body.barber
-        obj.besked = req.body.besked
+        obj.navn = req.body.name
+        obj.tidspunkt = req.body.time
+        obj.tlf = req.body.phone
+        obj.barber = req.body.cutter
+        obj.besked = req.body.message
+        json_export.reservation().push(obj);
+        json_export.reservationUpdate(JSON.stringify(json_export.reservation(),null,"\t"))
     })
 }
