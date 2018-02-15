@@ -771,6 +771,9 @@ h1 {
     font-size: 1em;
 }
 
+.infoImg {
+    -height: 100%;
+}
 
 
 >>>>>>> f4b4ae9f1b77e6a38f8198570d986b06eb096396

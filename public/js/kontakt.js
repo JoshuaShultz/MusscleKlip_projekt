@@ -14,25 +14,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
             alert("Du mangler at udfylde et felt")
         } else {
 
-            let object = {
+            var object = JSON.stringify({
                 name: name.value,
                 time: time.value,
                 phone: phone.value,
                 cutter: cutter.value,
                 message: message.value
-            }
+            })
+
+            console.log(object)
 
 
             fetch("http://localhost:3000/bestiltid", {
                 method: "POST",
-                'headers': {
+                headers: {
                     'Content-Type': 'application/json'
                 },
                 body: object,
-                mode: 'cors',
-                cache: 'default'
-
             })
+            .then(res => res.json())
+            .catch(error => console.log("Error" + error))
         }
 
 
