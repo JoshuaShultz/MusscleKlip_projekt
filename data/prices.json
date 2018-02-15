@@ -1,0 +1,44 @@
+[
+    {
+        "type": "manuel",
+        "cutting": [
+            {
+                "name": "short hår",
+                "price": 150
+            },
+            {
+                "name": "Langt hår",
+                "price": 200
+            },
+            {
+                "name": "Trimme",
+                "price": 70
+            },
+            {
+                "name": "Pensionist",
+                "price": 100
+            }
+        ]
+    },
+    {
+        "type": "auto",
+        "cutting": [
+            {
+                "name": "short hår",
+                "price": 100
+            },
+            {
+                "name": "Langt hår",
+                "price": 170
+            },
+            {
+                "name": "Trimme",
+                "price": 50
+            },
+            {
+                "name": "Pensionist",
+                "price": 100
+            }
+        ]
+    }
+]
