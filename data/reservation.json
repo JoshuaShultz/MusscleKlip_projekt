@@ -12,5 +12,12 @@
 		"tlf": "124512312",
 		"barber": "Frank",
 		"besked": "asdfasdfasd"
+	},
+	{
+		"navn": "Ronald",
+		"tidspunkt": "11:30",
+		"tlf": "30403013",
+		"barber": "Frank",
+		"besked": "Kunne godt tænke mig at få det flotteste nye hår. Masser af nye farver og en masse kamstrejf"
 	}
 ]
