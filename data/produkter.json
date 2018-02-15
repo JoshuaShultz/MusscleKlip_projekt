@@ -19,5 +19,19 @@
 		"info": "Mantas",
 		"pris": "1234",
 		"produktbillede": "/img/billede.jpg"
+	},
+	{
+		"id": 4,
+		"produkternavn": "",
+		"info": "",
+		"pris": "",
+		"produktbillede": "/img/Addy.jpg"
+	},
+	{
+		"id": 5,
+		"produkternavn": "",
+		"info": "",
+		"pris": "",
+		"produktbillede": "/img/Addy.jpg"
 	}
 ]
