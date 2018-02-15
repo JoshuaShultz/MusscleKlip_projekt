@@ -3,12 +3,17 @@
     <div class="container">
       <div class="row info">
 
-
+        <% footer.forEach(function(element) { %>
         <div class="footer-col col-md-4">
           <h3>Adresse</h3>
-          <p><!-- Jason info  -->
-            <br><!-- Jason info  --></p>
+          <p>"<%= element.navn %>"
+            <br> <%= element.vej %> 
+            <br> <%= element.by %> <%= element.postnr %>
+            <br> <%= element.email %>
+            <br> tlf. <%= element.tlf %> 
+          </p>
         </div>
+        <% }); %> 
 
         <div class="footer-col col-md-4">
             <h3>General Info</h3>
