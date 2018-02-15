@@ -14,26 +14,32 @@ document.addEventListener("DOMContentLoaded", (event) => {
             alert("Du mangler at udfylde et felt")
         } else {
 
-            var object = JSON.stringify({
+            // FETCH DATA
+
+            var object = {
                 name: name.value,
                 time: time.value,
                 phone: phone.value,
                 cutter: cutter.value,
                 message: message.value
-            })
+            }
 
             console.log(object)
 
-
-            fetch("http://localhost:3000/bestiltid", {
+            let url = "http://localhost:3000/bestiltid"
+            let data = {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: object,
-            })
-            .then(res => res.json())
-            .catch(error => console.log("Error" + error))
+                body: JSON.stringify(object),
+            }
+
+            // FETCH
+            fetch(url, data)
+                .then(res => res.json())
+                .then(response => console.log('Success:', response))
+                .catch(error => console.log("Error" + error))
         }
 
 
