@@ -6,22 +6,14 @@
           <div class="row">
           
           <!-- Elementet  -->
-            <div class="col-sm-4 portfolio-item">
-              <!-- <img class="img-fluid" src="img/bil (1).png" alt="bil" height="250" width="350">  -->
-              <!-- <img class="img-fluid" src="img/tumb.jpg" alt="tumb" height="250" width="350">   -->
-              
-              </div>
-              <div class="col-sm-4 portfolio-item">  
-              <!-- <img class="img-fluid" src="img/Curly-Wavy.jpg" alt="wavy" height="250" width="350">  -->
-              <!-- <img class="img-fluid" src="img/spiky.jpg" alt="spiky" height="220" width="350"> -->
-              
-              </div>
-              <div class="col-sm-4 portfolio-item">
-                  <!-- <img class="img-fluid" src="img/August_Fenisko.jpg" alt="august" height="220" width="350"> -->
-                  <!-- <img class="img-fluid" src="img/men-hairstyles-2016.jpg" alt="hairstyles" height="220" width="350">  -->
-              </div>
-            
-          <!-- Slut  -->
+          <% galleri.forEach(function(element) { %>
+
+          <div class="col-sm-4 portfolio-item">
+            <img class="img-fluid" src="/img/<%= element.billede %>">    
+            </div>
+          <% }); %>  
+      
+              <!-- Slut  -->
           </div>
 
   </div>
