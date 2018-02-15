@@ -99,7 +99,7 @@ module.exports = (server) => {
 
     server.get('/kontakt', function (req, res) {
         res.render('pages/kontakt', {
-            reservation :json_export.reservation()
+            reservation: json_export.reservation()
 
         });
     });
@@ -112,6 +112,9 @@ module.exports = (server) => {
         obj.barber = req.body.cutter
         obj.besked = req.body.message
         json_export.reservation().push(obj);
-        json_export.reservationUpdate(JSON.stringify(json_export.reservation(),null,"\t"))
+        json_export.reservationUpdate(JSON.stringify(json_export.reservation(), null, "\t"))
+    })
+    server.delete("/sletbestilling/:id", (req, res) => {
+        console.log(req.params.id);
     })
 }
