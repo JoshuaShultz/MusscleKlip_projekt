@@ -13,6 +13,13 @@ module.exports = {
     "reservation": () => {
         return require("../../data/reservation");
     },
+    "reservationUpdate": (data, res) => {
+        fs.writeFile("data/reservation.json", data, (err) => {
+            if (err) {
+                console.log(err)
+            }
+        })
+    },
     "about": () => {
         return require("../../data/about");
     },
