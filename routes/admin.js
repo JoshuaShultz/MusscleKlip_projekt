@@ -102,4 +102,13 @@ module.exports = (server) => {
 
         });
     });
+    server.post("/bestiltid", (req, res) => {
+        console.log(req.body)
+        let obj = {};
+        obj.navn = req.body.navn
+        obj.tidspunkt = req.body.tidspunkt
+        obj.tlf = req.body.tlf
+        obj.barber = req.body.barber
+        obj.besked = req.body.besked
+    })
 }
