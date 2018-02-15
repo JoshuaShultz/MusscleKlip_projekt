@@ -87,6 +87,7 @@ module.exports = (server) => {
 
     server.get('/info', function (req, res) {
         res.render('pages/info', {
+            footer:json_export.footer()
 
         });
     });
