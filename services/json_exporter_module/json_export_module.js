@@ -31,5 +31,11 @@ module.exports = {
     },
     "galleri": () => {
         return require("../../data/galleri");
+    },
+    "prices":()=>{
+        return require("../../data/prices");
+    },
+    "openHours":()=>{
+        return require("../../data/openHours");
     }
 }
