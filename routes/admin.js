@@ -6,22 +6,22 @@ const log_module = require("../services/logging_module/logging_module.js");
 module.exports = (server) => {
     server.get('/produkter', function (req, res) {
         log_module.activityLog(req.connection.remoteAddress + " admin /produkter");
-        
+
         //log
         if (req.session.rights == 1) {
             res.render('pages/produkter', {
                 produkter: json_export.products()
-    
+
             });
         }
-        else if(req.session.rights == 2){
-            
+        else if (req.session.rights == 2) {
+
             res.redirect("/kontakt")
         }
-        else{
+        else {
             res.redirect("/")
         }
-        
+
     });
     server.delete("/produkter/:id", (req, res) => {
         //log
@@ -38,15 +38,15 @@ module.exports = (server) => {
             res.render('pages/opretprodukt', {
             });
         }
-        else if(req.session.rights == 2){
-            
+        else if (req.session.rights == 2) {
+
             res.redirect("/kontakt")
         }
-        else{
+        else {
             res.redirect("/")
         }
         //log
-        
+
 
     });
     server.get('/produkter/:id', function (req, res) {
@@ -90,14 +90,14 @@ module.exports = (server) => {
                 footer: json_export.footer()
             });
         }
-        else if(req.session.rights == 2){
-            
+        else if (req.session.rights == 2) {
+
             res.redirect("/kontakt")
         }
-        else{
+        else {
             res.redirect("/")
         }
-        
+
 
 
     });
@@ -117,36 +117,46 @@ module.exports = (server) => {
     })
     server.get('/kontakt', function (req, res) {
         if (req.session.rights != null) {
-            res.render('pages/kontakt', {
-                reservation: json_export.reservation()
-    
-            });
+            sql_connection.query(`SELECT reservation_id, reservation_time, customers_name, customers_phone, employee_name
+             FROM ((tb_reservations
+             INNER JOIN tb_employees ON fk_reservation_employee_id = employee_id)
+             INNER JOIN tb_customers ON fk_reservation_customer_id = customers_id)
+              `, (err, data) => {
+                    console.log(data)
+                    res.render('pages/kontakt', {
+                        reservation: data
+
+                    });
+                })
+
         }
-        else{
+        else {
             res.redirect("/")
         }
-        
+
     });
     server.post("/bestiltid", (req, res) => {
-        console.log(req.body)
-        let obj = {};
-        obj.navn = req.body.name
-        obj.tidspunkt = req.body.time
-        obj.tlf = req.body.phone
-        obj.barber = req.body.cutter
-        obj.besked = req.body.message
-        json_export.reservation().push(obj);
-        json_export.reservationUpdate(JSON.stringify(json_export.reservation(), null, "\t"))
-        res.status(200).json({ sucess: true })
-        // sql_connection.query(`INSERT INTO tb_customers (customers_name,customers_phone) VALUES (?,?)`, [req.body.name, req.body.phone], (err, data) => {
-        //     sql_connection.query(`SELECT * FROM tb_customers where customers_name = ?`, [req.body.name], (err, userData) => {
-        //         sql_connection.query(`SELECT * FROM tb_employees where employee_userName = ?`, [req.body.cutter], (err, employeeData) => {
-        //             sql_connection.query(`INSERT INTO tb_reservations (reservation_time,fk_reservation_employee_id,fk_reservation_user_id) VALUES (?,?,?)`, [req.body.time, userData.id, employeeData.id], (err, data) => {
-        //             })
-        //         })
+        // export to JSON
+        // let obj = {};
+        // obj.navn = req.body.name
+        // obj.tidspunkt = req.body.date + " " + req.body.time + ":00"
+        // obj.tlf = req.body.phone
+        // obj.barber = req.body.cutter
+        // obj.besked = req.body.message
+        // json_export.reservation().push(obj);
+        // json_export.reservationUpdate(JSON.stringify(json_export.reservation(), null, "\t"))
+        //sql
+        sql_connection.query(`INSERT INTO tb_customers (customers_name,customers_phone) VALUES (?,?)`, [req.body.name, req.body.phone], (err, data) => {
+            sql_connection.query(`SELECT * FROM tb_customers where customers_name = ?`, [req.body.name], (err, userData) => {
+                sql_connection.query(`SELECT * FROM tb_employees where employee_userName = ?`, [req.body.cutter], (err, employeeData) => {
+                    sql_connection.query(`INSERT INTO tb_reservations (reservation_time,fk_reservation_employee_id,fk_reservation_customer_id) VALUES (?,?,?)`, [req.body.date + " " + req.body.time + ":00", employeeData[0].employee_id, userData[0].customers_id], (err, data) => {
+                        console.log(err);
+                    })
+                })
 
-        //     })
-        // })
+            })
+        })
+        res.status(200).json({ sucess: true })
 
     })
     server.delete("/sletbestilling/:id", (req, res) => {
