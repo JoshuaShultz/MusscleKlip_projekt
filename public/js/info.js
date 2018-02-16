@@ -31,6 +31,9 @@ console.log(object)
     }
 
     fetch(url, data)
+        .then(data => {
+            window.location.reload();
+        })
         .catch(err => console.log(err))
 
 })

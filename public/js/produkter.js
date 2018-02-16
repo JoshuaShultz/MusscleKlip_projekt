@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 'mode': 'cors',
                 'cache': 'default'
             })
+            .then(() => window.location.reload())
         })
     })
 
@@ -63,6 +64,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             "body": object,
             'mode': 'cors',
             'cache': 'default'
+        })
+        .then(data => {
+            window.location.reload();
         })
     })
 });
