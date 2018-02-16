@@ -7,22 +7,12 @@
                         <h3>Priser</h3>
                         <table class="table">
                             <tbody>
-                                <tr>
-                                    <td><span style="font-family: tahoma, arial, helvetica, sans-serif; color: #000000;">Klip med vask og føn</span></td>
-                                    <td class="price"><span style="font-family: tahoma, arial, helvetica, sans-serif; color: #000000;">370 kr.</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span style="font-family: tahoma, arial, helvetica, sans-serif; color: #000000;">Mini klip/studsning</span></td>
-                                    <td class="price"><span style="font-family: tahoma, arial, helvetica, sans-serif; color: #000000;">270 kr.</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span style="font-family: tahoma, arial, helvetica, sans-serif; color: #000000;">Maskinklip</span></td>
-                                    <td class="price"><span style="font-family: tahoma, arial, helvetica, sans-serif; color: #000000;">100 kr.</span></td>
-                                </tr>
-                                <tr>
-                                    <td><span style="font-family: tahoma, arial, helvetica, sans-serif; color: #000000;">Retning af kant</span></td>
-                                    <td class="price"><span style="font-family: tahoma, arial, helvetica, sans-serif; color: #000000;">100 kr.</span></td>
-                                </tr>
+                                <% prices[0].cutting.forEach(item => { %>
+                                    <tr>
+                                        <td><span style="font-family: tahoma, arial, helvetica, sans-serif; color: #000000;"><%= item.name %></span></td>
+                                        <td class="price"><span style="font-family: tahoma, arial, helvetica, sans-serif; color: #000000;"><%= item.price %>kr</span></td>
+                                    </tr>
+                                <% }) %>
                             </tbody>
                         </table>
                         <table class="table">
@@ -43,47 +33,17 @@
                     </div>
 
                     <div class="footer-col col-md-6">
-                        <h3>Åbningstider</h3>
-                        <table class="table table-dark">
-                            <tbody>
-                                <tr>
-                                    <td>Mandag</td>
-                                    <td>10:00-17:00</td>
-                                </tr>
-                                <tr>
-                                    <td>Tirsdag</td>
-                                    <td>10:00-18:30</td>
-                                </tr>
-                                <tr>
-                                    <td>Onsdag</td>
-                                    <td>10:00-18:30</td>
-                                </tr>
-                                <tr>
-                                    <td>Torsdag</td>
-                                    <td>10:00-18:30</td>
-                                </tr>
-                                <tr>
-                                    <td>Fredag</td>
-                                    <td>10:00-19:30</td>
-                                </tr>
-                                <tr>
-                                    <td>Lørdag</td>
-                                    <td>10:00-17:00</td>
-                                </tr>
-                                <tr>
-                                    <td>Søndag</td>
-                                    <td>10:00-17:00</td>
-                                </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td>Massage</td>
-                                    <td>09:00-21:00</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            <h3>Åbningstider</h3>
+                            <table class="table table-dark">
+                                <tbody>
+                                    <% openHours.forEach(item => { %>
+                                        <tr>
+                                            <td><%= item.day %></td>
+                                            <td><%= item.opening%> - <%= item.closing %></td>
+                                        </tr>
+                                    <% }) %>
+                                </tbody>
+                            </table>
                         <br>
                     </div>
                 </div>
