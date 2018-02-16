@@ -1,0 +1,31 @@
+Åbningstider
+
+
+Hverdage
+
+Mandag		10-18
+Tirsdag		10-18
+Onsdag		10-18
+Torsdag		10-18
+Fredag		10-18
+
+Weekend
+
+Lørdag		10-14
+Søndag		lukket
+
+
+
+Priser
+
+Manuelt
+Kort hår	150,-
+Langt hår	200,-
+Trimme 		70,-S
+pensionist	100,-
+
+Maskine
+Kort hår	100,-
+Langt hår	170,-
+Trimme 		50,-
+pensionist	100,-
