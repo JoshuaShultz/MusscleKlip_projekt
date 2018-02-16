@@ -5,12 +5,23 @@ const log_module = require("../services/logging_module/logging_module.js");
 
 module.exports = (server) => {
     server.get('/produkter', function (req, res) {
-        res.render('pages/produkter', {
-            produkter: json_export.products()
-
-        });
-        //log
         log_module.activityLog(req.connection.remoteAddress + " admin /produkter");
+        
+        //log
+        if (req.session.rights == 1) {
+            res.render('pages/produkter', {
+                produkter: json_export.products()
+    
+            });
+        }
+        else if(req.session.rights == 2){
+            
+            res.redirect("/kontakt")
+        }
+        else{
+            res.redirect("/")
+        }
+        
     });
     server.delete("/produkter/:id", (req, res) => {
         //log
@@ -22,10 +33,20 @@ module.exports = (server) => {
         res.status(200).json({ sucess: true })
     })
     server.get('/opretprodukt', function (req, res) {
-        res.render('pages/opretprodukt', {
-        });
-        //log
         log_module.activityLog(req.connection.remoteAddress + " admin /opretprodukt");
+        if (req.session.rights == 1) {
+            res.render('pages/opretprodukt', {
+            });
+        }
+        else if(req.session.rights == 2){
+            
+            res.redirect("/kontakt")
+        }
+        else{
+            res.redirect("/")
+        }
+        //log
+        
 
     });
     server.get('/produkter/:id', function (req, res) {
@@ -48,6 +69,7 @@ module.exports = (server) => {
         log_module.activityLog(req.connection.remoteAddress + " admin delete/produkter/:id");
         log_module.adminlog(req.connection.remoteAddress + ` product with values produktnavn : ${obj.produktnavn} beskrivelse : ${obj.info} pris : ${obj.pris} billede : ${obj.produktbillede} has been created`);
         res.status(200).json({ sucess: true })
+
     })
     server.put("/redigereprodukter", (req, res) => {
         let id = req.body.id;
@@ -62,42 +84,26 @@ module.exports = (server) => {
         json_export.productsUpdate(JSON.stringify(json_export.products(), null, "\t"));
         res.status(200).json({ sucess: true })
     })
-
-    server.get('/galleri', function (req, res) {
-        res.render('pages/galleri', {
-
-        });
-    });
-
-    server.get('/opretbillede', function (req, res) {
-        res.render('pages/opretbillede', {
-
-        });
-    });
-
-    server.get('/arbejdere', function (req, res) {
-        res.render('pages/arbejdere', {
-
-        });
-    });
-
-    server.get('/opretarbejdere', function (req, res) {
-        res.render('pages/opretarbejdere', {
-
-        });
-    });
-
-
     server.get('/info', function (req, res) {
-        res.render('pages/info', {
-            footer: json_export.footer()
-        });
-
+        if (req.session.rights == 1) {
+            res.render('pages/info', {
+                footer: json_export.footer()
+            });
+        }
+        else if(req.session.rights == 2){
+            
+            res.redirect("/kontakt")
+        }
+        else{
+            res.redirect("/")
+        }
         
+
+
     });
     server.put("/retinfo", (req, res) => {
         log_module.activityLog(req.connection.remoteAddress + " admin put/retinfo");
-        log_module.adminlog(req.connection.remoteAddress + ` footer has been changed from : navn: ${json_export.footer()[0].navn} vej: ${json_export.footer()[0].vej} postnr: ${json_export.footer()[0].postnr} by: ${json_export.footer()[0].by} email: ${json_export.footer()[0].email} tlf: ${json_export.footer()[0].tlf} to: navn: ${ req.body.navn} vej: ${ req.body.vej} postnr: ${ req.body.postnr} by: ${ req.body.by} email: ${ req.body.email} tlf: ${ req.body.tlf} 
+        log_module.adminlog(req.connection.remoteAddress + ` footer has been changed from : navn: ${json_export.footer()[0].navn} vej: ${json_export.footer()[0].vej} postnr: ${json_export.footer()[0].postnr} by: ${json_export.footer()[0].by} email: ${json_export.footer()[0].email} tlf: ${json_export.footer()[0].tlf} to: navn: ${req.body.navn} vej: ${req.body.vej} postnr: ${req.body.postnr} by: ${req.body.by} email: ${req.body.email} tlf: ${req.body.tlf} 
         `);
         json_export.footer()[0].navn = req.body.navn;
         json_export.footer()[0].vej = req.body.vej;
@@ -109,18 +115,17 @@ module.exports = (server) => {
         res.status(200).json({ sucess: true })
 
     })
-
-    server.get('/opretinfo', function (req, res) {
-        res.render('pages/opretinfo', {
-
-        });
-    });
-
     server.get('/kontakt', function (req, res) {
-        res.render('pages/kontakt', {
-            reservation: json_export.reservation()
-
-        });
+        if (req.session.rights != null) {
+            res.render('pages/kontakt', {
+                reservation: json_export.reservation()
+    
+            });
+        }
+        else{
+            res.redirect("/")
+        }
+        
     });
     server.post("/bestiltid", (req, res) => {
         console.log(req.body)
@@ -133,6 +138,16 @@ module.exports = (server) => {
         json_export.reservation().push(obj);
         json_export.reservationUpdate(JSON.stringify(json_export.reservation(), null, "\t"))
         res.status(200).json({ sucess: true })
+        sql_connection.query(`INSERT INTO tb_customers (customers_name,customers_phone) VALUES (?,?)`, [req.body.name, req.body.phone], (err, data) => {
+            sql_connection.query(`SELECT * FROM tb_customers where customers_name = ?`, [req.body.name], (err, userData) => {
+                sql_connection.query(`SELECT * FROM tb_employees where employee_userName = ?`, [req.body.cutter], (err, employeeData) => {
+                    sql_connection.query(`INSERT INTO tb_reservations (reservation_time,fk_reservation_employee_id,fk_reservation_user_id) VALUES (?,?,?)`, [req.body.time, userData.id, employeeData.id], (err, data) => {
+                    })
+                })
+
+            })
+        })
+
     })
     server.delete("/sletbestilling/:id", (req, res) => {
         //log
