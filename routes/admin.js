@@ -168,4 +168,9 @@ module.exports = (server) => {
         json_export.reservationUpdate(JSON.stringify(json_export.reservation(), null, "\t"));
         res.status(200).json({ sucess: true })
     })
+    server.get('/logout', function (req, res) {
+		req.session.destroy(function (err) {
+			res.redirect("/");
+		});
+	});
 }
