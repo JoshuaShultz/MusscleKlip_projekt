@@ -3,7 +3,7 @@
         "type": "manuel",
         "cutting": [
             {
-                "name": "short hår",
+                "name": "Kort hår",
                 "price": 150
             },
             {
@@ -11,7 +11,7 @@
                 "price": 200
             },
             {
-                "name": "Trimme",
+                "name": "Trimmning",
                 "price": 70
             },
             {
@@ -24,7 +24,7 @@
         "type": "auto",
         "cutting": [
             {
-                "name": "short hår",
+                "name": "Kort hår",
                 "price": 100
             },
             {
@@ -32,7 +32,7 @@
                 "price": 170
             },
             {
-                "name": "Trimme",
+                "name": "Trimning",
                 "price": 50
             },
             {

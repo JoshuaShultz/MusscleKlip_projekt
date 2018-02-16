@@ -1,32 +1,32 @@
 [{
     "day":"Mandag",
-    "opening":10,
-    "closing":18
+    "opening":"10.00",
+    "closing":"18.00"
 },
 {
     "day":"Tirsdag",
-    "opening":10,
-    "closing":18
+    "opening":"10.00",
+    "closing":"18.00"
 },
 {
     "day":"Onsdag",
-    "opening":10,
-    "closing":18
+    "opening":"10.00",
+    "closing":"18.00"
 },
 {
     "day":"Torsdag",
-    "opening":10,
-    "closing":18
+    "opening":"10.00",
+    "closing":"18.00"
 },
 {
     "day":"Fredag",
-    "opening":10,
-    "closing":18
+    "opening":"10.00",
+    "closing":"18.00"
 },
 {
     "day":"Lørdag",
-    "opening":10,
-    "closing":14
+    "opening":"10.00",
+    "closing":"14.00"
 },
 {
     "day":"Søndag",
