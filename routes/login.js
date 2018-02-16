@@ -15,10 +15,11 @@ module.exports = (server) => {
 		var post = req.body;
 		var name = post.user_name;
 		var pass = post.password;
-        sql_connection.query(`SELECT employee_id,fk_employee_role_id FROM tb_employees where employee_userName = ? AND employee_password = ?`,[name,pass],(err,data)=>{
+        sql_connection.query(`SELECT employee_id,fk_employee_role_id, employee_name FROM tb_employees where employee_userName = ? AND employee_password = ?`,[name,pass],(err,data)=>{
             if (data.length) {
                 console.log(data);
-				req.session.userId = data[0].employee_id;
+                req.session.userId = data[0].employee_id;
+                req.session.name = data[0].employee_name;
                 req.session.user = data[0];
                 req.session.rights = data[0].fk_employee_role_id;
                 if (req.session.rights == 1){

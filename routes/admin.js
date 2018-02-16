@@ -116,6 +116,7 @@ module.exports = (server) => {
 
     })
     server.get('/kontakt', function (req, res) {
+        log_module.activityLog(req.connection.remoteAddress + " admin get/kontakt");
         if (req.session.rights != null) {
             sql_connection.query(`SELECT reservation_id, reservation_time, customers_name, customers_phone, employee_name
              FROM ((tb_reservations
@@ -136,6 +137,7 @@ module.exports = (server) => {
 
     });
     server.post("/bestiltid", (req, res) => {
+        log_module.activityLog(req.connection.remoteAddress + " POST/bestiltid");
         // export to JSON
         // let obj = {};
         // obj.navn = req.body.name
@@ -149,7 +151,7 @@ module.exports = (server) => {
         sql_connection.query(`INSERT INTO tb_customers (customers_name,customers_phone) VALUES (?,?)`, [req.body.name, req.body.phone], (err, data) => {
             sql_connection.query(`SELECT * FROM tb_customers where customers_name = ?`, [req.body.name], (err, userData) => {
                 sql_connection.query(`SELECT * FROM tb_employees where employee_userName = ?`, [req.body.cutter], (err, employeeData) => {
-                    sql_connection.query(`INSERT INTO tb_reservations (reservation_time,fk_reservation_employee_id,fk_reservation_customer_id) VALUES (?,?,?)`, [req.body.date + " " + req.body.time + ":00", employeeData[0].employee_id, userData[0].customers_id], (err, data) => {
+                    sql_connection.query(`INSERT INTO tb_reservations (reservation_time,fk_reservation_employee_id,fk_reservation_customer_id,reservation_message) VALUES (?,?,?,?)`, [req.body.date + " " + req.body.time + ":00", employeeData[0].employee_id, userData[0].customers_id,req.body.message], (err, data) => {
                         console.log(err);
                     })
                 })
@@ -162,10 +164,10 @@ module.exports = (server) => {
     server.delete("/sletbestilling/:id", (req, res) => {
         //log
         log_module.activityLog(req.connection.remoteAddress + " admin delete/sletbestilling/:id");
-        log_module.adminlog(req.connection.remoteAddress + "a reservation has reservation with name" );
+        log_module.adminlog(req.connection.remoteAddress + "a reservation has reservation by" + req.session.name);
         sql_connection.query(`DELETE FROM tb_reservations WHERE reservation_id = ?`,[req.params.id],(err,data)=>{
-
         })
+        log_module.adminlog()
         // delete the requested order
         // json_export.reservation().splice(req.params.id, 1)
         // json_export.reservationUpdate(JSON.stringify(json_export.reservation(), null, "\t"));
