@@ -138,15 +138,15 @@ module.exports = (server) => {
         json_export.reservation().push(obj);
         json_export.reservationUpdate(JSON.stringify(json_export.reservation(), null, "\t"))
         res.status(200).json({ sucess: true })
-        sql_connection.query(`INSERT INTO tb_customers (customers_name,customers_phone) VALUES (?,?)`, [req.body.name, req.body.phone], (err, data) => {
-            sql_connection.query(`SELECT * FROM tb_customers where customers_name = ?`, [req.body.name], (err, userData) => {
-                sql_connection.query(`SELECT * FROM tb_employees where employee_userName = ?`, [req.body.cutter], (err, employeeData) => {
-                    sql_connection.query(`INSERT INTO tb_reservations (reservation_time,fk_reservation_employee_id,fk_reservation_user_id) VALUES (?,?,?)`, [req.body.time, userData.id, employeeData.id], (err, data) => {
-                    })
-                })
+        // sql_connection.query(`INSERT INTO tb_customers (customers_name,customers_phone) VALUES (?,?)`, [req.body.name, req.body.phone], (err, data) => {
+        //     sql_connection.query(`SELECT * FROM tb_customers where customers_name = ?`, [req.body.name], (err, userData) => {
+        //         sql_connection.query(`SELECT * FROM tb_employees where employee_userName = ?`, [req.body.cutter], (err, employeeData) => {
+        //             sql_connection.query(`INSERT INTO tb_reservations (reservation_time,fk_reservation_employee_id,fk_reservation_user_id) VALUES (?,?,?)`, [req.body.time, userData.id, employeeData.id], (err, data) => {
+        //             })
+        //         })
 
-            })
-        })
+        //     })
+        // })
 
     })
     server.delete("/sletbestilling/:id", (req, res) => {
