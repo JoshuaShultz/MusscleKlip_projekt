@@ -118,7 +118,7 @@ module.exports = (server) => {
     server.get('/kontakt', function (req, res) {
         log_module.activityLog(req.connection.remoteAddress + " admin get/kontakt");
         if (req.session.rights != null) {
-            sql_connection.query(`SELECT reservation_id, reservation_time, customers_name, customers_phone, employee_name
+            sql_connection.query(`SELECT reservation_id, reservation_time, reservation_message, customers_name, customers_phone, employee_name
              FROM ((tb_reservations
              INNER JOIN tb_employees ON fk_reservation_employee_id = employee_id)
              INNER JOIN tb_customers ON fk_reservation_customer_id = customers_id)
