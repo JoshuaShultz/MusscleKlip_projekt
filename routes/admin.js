@@ -123,7 +123,6 @@ module.exports = (server) => {
              INNER JOIN tb_employees ON fk_reservation_employee_id = employee_id)
              INNER JOIN tb_customers ON fk_reservation_customer_id = customers_id)
               `, (err, data) => {
-                    console.log(data)
                     res.render('pages/kontakt', {
                         reservation: data
 
