@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             fetch(url, data)
                 .then(res => res.json())
                 .then(response => console.log('Success:', response))
+                .then(() => window.location.reload())
                 .catch(error => console.log("Error" + error))
         }
 

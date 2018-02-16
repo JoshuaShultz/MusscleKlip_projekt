@@ -1,6 +1,6 @@
 [
 	{
-		"produktnavn": "Voks",
+		"produktnavn": "Voks 101",
 		"info": "maybe it's maybelline",
 		"pris": "49",
 		"produktbillede": "Keune-Wax.jpg"
@@ -20,8 +20,7 @@
 	{
 		"produktnavn": "Hårplejesæt",
 		"info": "maybe it's maybelline",
-         "pris": "169",
+		"pris": "169",
 		"produktbillede": "Keune-Produkter.jpg"
 	}
 ]
-
