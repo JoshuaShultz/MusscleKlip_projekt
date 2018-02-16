@@ -3,36 +3,26 @@
 		"produktnavn": "Voks",
 		"info": "maybe it's maybelline",
 		"pris": "49",
-		"produktbillede": "voks.jpeg"
+		"produktbillede": "Keune-Wax.jpg"
 	},
 	{
 		"produktnavn": "Gele",
 		"info": "snydt",
 		"pris": "99",
-		"produktbillede": "gele.jpg"
+		"produktbillede": "Keune-ShapingFibres.jpg"
 	},
 	{
 		"produktnavn": "Hairspray FX1000",
 		"info": "maybe it's maybelline",
 		"pris": "100",
-		"produktbillede": "hairspray.jpg"
+		"produktbillede": "hair-spray.jpg"
 	},
 	{
-		"produktnavn": "Børste 5000",
+		"produktnavn": "Hårplejesæt",
 		"info": "maybe it's maybelline",
-		"pris": "49",
-		"produktbillede": "brush.jpeg"
-	},
-	{
-		"produktnavn": "Shampoo Green",
-		"info": "maybe it's maybelline",
-		"pris": "100",
-		"produktbillede": "shampoo.jpeg"
-	},
-	{
-		"produktnavn": "Balsam X9FX50",
-		"info": "maybe it's maybelline",
-		"pris": "50",
-		"produktbillede": "balsam.jpg"
+		"pris": "169",
+		"produktbillede": "Keune-Produkter.jpg"
 	}
+	
+	
 ]
