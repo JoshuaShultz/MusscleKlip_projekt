@@ -111,7 +111,7 @@ module.exports = (server) => {
         json_export.footer()[0].by = req.body.by;
         json_export.footer()[0].email = req.body.email;
         json_export.footer()[0].tlf = req.body.tlf;
-        json_export.footerUpdate(JSON.stringify(json_export.footer()));
+        json_export.footerUpdate(JSON.stringify(json_export.footer(),null,"\t"));
         res.status(200).json({ sucess: true })
 
     })
@@ -164,10 +164,9 @@ module.exports = (server) => {
     server.delete("/sletbestilling/:id", (req, res) => {
         //log
         log_module.activityLog(req.connection.remoteAddress + " admin delete/sletbestilling/:id");
-        log_module.adminlog(req.connection.remoteAddress + "a reservation has reservation by" + req.session.name);
+        log_module.adminlog(req.connection.remoteAddress + " a reservation has deleted");
         sql_connection.query(`DELETE FROM tb_reservations WHERE reservation_id = ?`,[req.params.id],(err,data)=>{
         })
-        log_module.adminlog()
         // delete the requested order
         // json_export.reservation().splice(req.params.id, 1)
         // json_export.reservationUpdate(JSON.stringify(json_export.reservation(), null, "\t"));
