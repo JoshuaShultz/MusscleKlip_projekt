@@ -97,7 +97,7 @@
                     <th class="col-sm-3" scope="col">Tidspunkt</th>
                     <th class="col-sm-3" scope="col">Telefon</th>
                     <th class="col-sm-3" scope="col">Barber</th>
-                    <!-- <th class="col-sm-3" scope="col">Besked</th> -->
+                    <th class="col-sm-3" scope="col">Besked</th>
                 </tr>
             </thead>
 
@@ -108,7 +108,7 @@
                       <td class="time col-sm-3"><%= item.reservation_time %></td>
                       <td class="tlf col-sm-3"><%= item.customers_phone %></td>
                       <td class="barber col-sm-3"><%= item.employee_name %></td>
-                      <!-- <td class="besked col-sm-3"><%= item.besked %></td> -->
+                      <td class="besked col-sm-3"><%= item.reservation_message %></td>
                       <td class="knapper">
                           <a href="#" type="button" class="btn btn-primary btn-xs delete" data-id=" <%= item.reservation_id %>" title="Slet">
                               <i class="fa fa-trash green" aria-hidden="true"></i>
