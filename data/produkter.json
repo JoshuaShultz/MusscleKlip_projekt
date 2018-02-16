@@ -1,20 +1,38 @@
 [
 	{
-		"produktnavn": "voks13m,",
+		"produktnavn": "Voks",
 		"info": "maybe it's maybelline",
-		"pris": "10",
-		"produktbillede": "undefined"
+		"pris": "49",
+		"produktbillede": "voks.jpeg"
 	},
 	{
-		"produktnavn": "det nye produkt 123",
+		"produktnavn": "Gele",
 		"info": "snydt",
-		"pris": "100000",
-		"produktbillede": "/img/billede.jpg"
+		"pris": "99",
+		"produktbillede": "gele.jpg"
 	},
 	{
-		"produktnavn": "hej 123",
+		"produktnavn": "Hairspray FX1000",
 		"info": "maybe it's maybelline",
-		"pris": "10",
-		"produktbillede": "undefined"
+		"pris": "100",
+		"produktbillede": "hairspray.jpg"
+	},
+	{
+		"produktnavn": "Børste 5000",
+		"info": "maybe it's maybelline",
+		"pris": "49",
+		"produktbillede": "brush.jpeg"
+	},
+	{
+		"produktnavn": "Shampoo Green",
+		"info": "maybe it's maybelline",
+		"pris": "100",
+		"produktbillede": "shampoo.jpeg"
+	},
+	{
+		"produktnavn": "Balsam X9FX50",
+		"info": "maybe it's maybelline",
+		"pris": "50",
+		"produktbillede": "balsam.jpg"
 	}
 ]

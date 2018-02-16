@@ -1,0 +1,26 @@
+<section id="produkter">
+
+        <div class="container hvid">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 m-auto">
+                    <h1 class="sort">Produkter</h1>
+                    
+                    <div class="row img-cutters text-center row-eq-height">
+                        <% products.forEach(item => { %>
+                            
+                            <div class="col-sm-3 product-full">
+                                <img src="./img/<%= item.produktbillede %>" alt="<%= item.produktbillede %>" class="img-responsive img-fluid img-thumbnail product-img">
+                                <div class="product-text">
+                                    <p class="product-name"> <%= item.produktnavn %></p>
+                                </div>
+                                <!-- <p class="product-info"> <%= item.info %> </p> -->
+                                <p class="product-pris"> <%= item.pris %>,- DKK </p>
+                            </div>
+                        <% }) %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+    </section>
+    
